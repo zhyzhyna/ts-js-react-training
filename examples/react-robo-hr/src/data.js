@@ -1,4 +1,4 @@
-const departments = [
+const DEPARTMENTS = [
   {
     id: 0,
     text: "Technology"
@@ -12,7 +12,7 @@ const departments = [
     text: "Delivery"
   }
 ];
-const jobTitles = [
+const JOB_TITLES = [
   {
     id: 0,
     departmentId: 0,
@@ -71,7 +71,8 @@ const INITIAL_ROBOTS = [
     username: "Bret",
     email: "Sincere@april.biz",
     jobTitleId: 1,
-    active: true
+    active: true,
+    retired: false
   },
   {
     id: 2,
@@ -80,6 +81,7 @@ const INITIAL_ROBOTS = [
     email: "Shanna@melissa.tv",
     jobTitleId: 2,
     active: false,
+    retired: false
   },
   {
     id: 3,
@@ -88,6 +90,7 @@ const INITIAL_ROBOTS = [
     email: "Nathan@yesenia.net",
     jobTitleId: 3,
     active: true,
+    retired: false
   },
   {
     id: 4,
@@ -96,6 +99,7 @@ const INITIAL_ROBOTS = [
     email: "Julianne.OConner@kory.org",
     jobTitleId: 4,
     active: true,
+    retired: false
   },
   {
     id: 5,
@@ -104,6 +108,7 @@ const INITIAL_ROBOTS = [
     email: "Lucio_Hettinger@annie.ca",
     jobTitleId: 5,
     active: false,
+    retired: true
   },
   {
     id: 6,
@@ -112,6 +117,7 @@ const INITIAL_ROBOTS = [
     email: "Karley_Dach@jasper.info",
     jobTitleId: 6,
     active: false,
+    retired: true
   },
   {
     id: 7,
@@ -120,6 +126,7 @@ const INITIAL_ROBOTS = [
     email: "Telly.Hoeger@billy.biz",
     jobTitleId: 7,
     active: true,
+    retired: false
   },
   {
     id: 8,
@@ -127,7 +134,8 @@ const INITIAL_ROBOTS = [
     username: "Maxime_Nienow",
     email: "Sherwood@rosamond.me",
     jobTitleId: 8,
-    active: true
+    active: true,
+    retired: false
   },
   {
     id: 9,
@@ -136,15 +144,16 @@ const INITIAL_ROBOTS = [
     email: "Chaim_McDermott@dana.io",
     jobTitleId: 9,
     active: false,
+    retired: true
   },
   {
     id: 10,
     name: "Clementina DuBuque",
     username: "Moriah.Stanton",
     email: "Rey.Padberg@karina.biz",
-    jobTitleId: 0,
+    jobTitleId: 99,
     active: true
   }
 ];
 
-export { departments, jobTitles, INITIAL_ROBOTS }
+export { DEPARTMENTS, JOB_TITLES, INITIAL_ROBOTS };

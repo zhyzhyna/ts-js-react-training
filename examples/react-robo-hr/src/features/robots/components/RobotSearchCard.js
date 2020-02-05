@@ -19,31 +19,42 @@ const PowerOff = () => (
     <Icon path={mdiPowerPlugOff} size={3} />
   </span>
 );
-const RobotSearchCard = ({ robot, onEdit, onActivate, onDeactivate }) => (
-  <Card style={{margin: '1rem'}}>
-    <CardImage src={`https://robohash.org/${robot.id}?size=1280x960`} />
+const RobotSearchCard = ({
+  robotId,
+  active,
+  name,
+  username,
+  department,
+  jobTitle,
+  onActivate,
+  retired,
+  onDeactivate
+}) => (
+  <Card style={{ margin: "1rem" }}>
+    <CardImage src={`https://robohash.org/${robotId}?size=1280x960`} />
     <CardContent>
-      <CardaMediaContent renderMediaLeft={robot.active ? PowerOn : PowerOff}>
-        <p className="title is-4">{robot.name}</p>
-        <p className="subtitle is-6">@{robot.username}</p>
+      <CardaMediaContent renderMediaLeft={active ? PowerOn : PowerOff}>
+        <p className="title is-4">
+          {name} {retired ? " : [retired]" : ""}
+        </p>
+        <p className="subtitle is-6">@{username}</p>
       </CardaMediaContent>
-      {robot.department} - {robot.jobTitle}
+      {department} - {jobTitle}
     </CardContent>
     <CardFooter>
       <CardFooterItem>
-        <button className="button is-fullwidth is-primary" onClick={onEdit}>
-          Edit
-        </button>
-      </CardFooterItem>
-      <CardFooterItem>
-        <button className="button is-fullwidth is-success" disabled={robot.active} onClick={onActivate}>
+        <button
+          className="button is-fullwidth is-success"
+          disabled={active}
+          onClick={onActivate}
+        >
           Activate
         </button>
       </CardFooterItem>
       <CardFooterItem>
         <button
           className="button is-fullwidth is-warning"
-          disabled={!robot.active} 
+          disabled={!active}
           onClick={onDeactivate}
         >
           Deactivate
